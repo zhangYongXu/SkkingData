@@ -84,8 +84,23 @@ namespace SkkingData
         }
         private void lessonListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             ListView.SelectedIndexCollection c = lessonListView.SelectedIndices;
 
+            if (c.Count > 0)
+            {
+                //MessageBox.Show("index:"+c[0]);
+
+                int index = c[0];
+                LessonModel lessonModel = (LessonModel)moduleModel.lessonList[index];
+
+                
+            }
+            
+        }
+        private void lessonListView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ListView.SelectedIndexCollection c = lessonListView.SelectedIndices;
             if (c.Count > 0)
             {
                 //MessageBox.Show("index:"+c[0]);
@@ -98,12 +113,18 @@ namespace SkkingData
                 {
                     moduleModel.lessonList.Add(lessonModel);
                     refreshLessonListView();
+
+                    String jsonString = JSONHandle.Obj2Json(moduleModel.lessonList);
+                    //MessageBox.Show("jsonString:"+jsonString);
+                    String filePath = moduleModel.jsonFileLocalPath;
+                    FileHandle.saveJsonFile(filePath,jsonString);
+         
                 }
             }
         }
-        
 
-        
+
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -121,6 +142,11 @@ namespace SkkingData
             {
                 moduleModel.lessonList.Add(lessonModel);
                 refreshLessonListView();
+
+                String jsonString = JSONHandle.getJsonString(moduleModel.lessonList);
+                //MessageBox.Show("jsonString:" + jsonString);
+                String filePath = moduleModel.jsonFileLocalPath;
+                FileHandle.saveJsonFile(filePath, jsonString);
             }
 
         }
@@ -137,7 +163,7 @@ namespace SkkingData
                 item.SubItems.Add(model.name);
                 lessonListView.Items.Add(item);
             }
-            //lessonListView.SmallImageList = imageList;
+            
         }
 
         

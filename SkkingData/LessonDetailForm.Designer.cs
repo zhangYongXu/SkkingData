@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lessonImageButton = new System.Windows.Forms.Button();
             this.congfirmButton = new System.Windows.Forms.Button();
+            this.IntroductionTItle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,11 +84,24 @@
             this.congfirmButton.UseVisualStyleBackColor = true;
             this.congfirmButton.Click += new System.EventHandler(this.congfirmButton_Click);
             // 
+            // IntroductionTItle
+            // 
+            this.IntroductionTItle.AutoSize = true;
+            this.IntroductionTItle.BackColor = System.Drawing.SystemColors.Control;
+            this.IntroductionTItle.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.IntroductionTItle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.IntroductionTItle.Location = new System.Drawing.Point(20, 9);
+            this.IntroductionTItle.Name = "IntroductionTItle";
+            this.IntroductionTItle.Size = new System.Drawing.Size(142, 24);
+            this.IntroductionTItle.TabIndex = 5;
+            this.IntroductionTItle.Text = "第一课 数据";
+            // 
             // LessonDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.IntroductionTItle);
             this.Controls.Add(this.congfirmButton);
             this.Controls.Add(this.lessonImageButton);
             this.Controls.Add(this.label1);
@@ -95,6 +109,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "LessonDetailForm";
             this.Text = "课程编辑";
+            this.Load += new System.EventHandler(this.LessonDetailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -108,5 +123,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button lessonImageButton;
         private System.Windows.Forms.Button congfirmButton;
+        private System.Windows.Forms.Label IntroductionTItle;
     }
 }

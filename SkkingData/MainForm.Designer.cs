@@ -35,6 +35,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lessonListView = new System.Windows.Forms.ListView();
+            this.listviewItemLessonImage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listviewLessonName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button5 = new System.Windows.Forms.Button();
             this.moduleTItle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,9 +48,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.videoListView = new System.Windows.Forms.ListView();
-            this.lessonListView = new System.Windows.Forms.ListView();
-            this.listviewItemLessonImage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listviewLessonName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -127,6 +127,33 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(295, 564);
             this.panel2.TabIndex = 5;
+            // 
+            // lessonListView
+            // 
+            this.lessonListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listviewItemLessonImage,
+            this.listviewLessonName});
+            this.lessonListView.FullRowSelect = true;
+            this.lessonListView.GridLines = true;
+            this.lessonListView.Location = new System.Drawing.Point(4, 42);
+            this.lessonListView.Name = "lessonListView";
+            this.lessonListView.Size = new System.Drawing.Size(282, 515);
+            this.lessonListView.TabIndex = 3;
+            this.lessonListView.TileSize = new System.Drawing.Size(128, 50);
+            this.lessonListView.UseCompatibleStateImageBehavior = false;
+            this.lessonListView.View = System.Windows.Forms.View.Details;
+            this.lessonListView.SelectedIndexChanged += new System.EventHandler(this.lessonListView_SelectedIndexChanged);
+            this.lessonListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lessonListView_MouseDoubleClick);
+            // 
+            // listviewItemLessonImage
+            // 
+            this.listviewItemLessonImage.Text = "课程图片";
+            // 
+            // listviewLessonName
+            // 
+            this.listviewLessonName.Text = "课程标题";
+            this.listviewLessonName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.listviewLessonName.Width = 182;
             // 
             // button5
             // 
@@ -222,32 +249,6 @@
             this.videoListView.Size = new System.Drawing.Size(397, 328);
             this.videoListView.TabIndex = 3;
             this.videoListView.UseCompatibleStateImageBehavior = false;
-            // 
-            // lessonListView
-            // 
-            this.lessonListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.listviewItemLessonImage,
-            this.listviewLessonName});
-            this.lessonListView.FullRowSelect = true;
-            this.lessonListView.GridLines = true;
-            this.lessonListView.Location = new System.Drawing.Point(4, 42);
-            this.lessonListView.Name = "lessonListView";
-            this.lessonListView.Size = new System.Drawing.Size(282, 515);
-            this.lessonListView.TabIndex = 3;
-            this.lessonListView.TileSize = new System.Drawing.Size(128, 50);
-            this.lessonListView.UseCompatibleStateImageBehavior = false;
-            this.lessonListView.View = System.Windows.Forms.View.Details;
-            this.lessonListView.SelectedIndexChanged += new System.EventHandler(this.lessonListView_SelectedIndexChanged);
-            // 
-            // listviewItemLessonImage
-            // 
-            this.listviewItemLessonImage.Text = "课程图片";
-            // 
-            // listviewLessonName
-            // 
-            this.listviewLessonName.Text = "课程标题";
-            this.listviewLessonName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.listviewLessonName.Width = 182;
             // 
             // MainForm
             // 

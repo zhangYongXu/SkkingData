@@ -9,8 +9,10 @@ namespace SkkingData.tools
 {
     public class FileHandle
     {
-        public void saveFile(String path) {
-
+        public static void saveJsonFile(String path,String jsonString) {
+               FileStream fs1 = new FileStream(path, FileMode.Create, FileAccess.Write);
+           
+               fs1.Close();
         }
         public void copyFile(String originalPath, String targetPath) {
             String dir = Path.GetDirectoryName(targetPath);
@@ -24,8 +26,25 @@ namespace SkkingData.tools
             }
         }
 
-        public String readFile(String path) {
+        public static String readJsonFile(String path) {
+            if (null == path) {
+                return null;
+            }
+            try
+            {
+                StreamReader sr = new StreamReader(path, Encoding.UTF8);
+                String line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(line.ToString());
+                }
+                sr.Close();
+                return line;
+            }
+            catch {
 
+            }
+            
             return null;
         }
     }

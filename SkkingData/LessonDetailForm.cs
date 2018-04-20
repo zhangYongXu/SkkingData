@@ -39,6 +39,7 @@ namespace SkkingData
             initView();
         }
         public void initView(){
+            IntroductionTItle.Text = "第"+(lessonModel.orderNum+1)+"课 数据";
             if (lType == LessonDetailType.LessonDetailTypeEdit){
                 String imagePath = moduleModel.commonPath + "images\\" + lessonModel.imageName;
                 lessonImageButton.BackgroundImage = Image.FromFile(imagePath);
@@ -104,6 +105,11 @@ namespace SkkingData
                 
 
             }
+        }
+
+        private void LessonDetailForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
