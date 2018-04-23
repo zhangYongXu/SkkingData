@@ -42,6 +42,8 @@ namespace SkkingData
             IntroductionTItle.Text = "第"+(lessonModel.orderNum+1)+"课 数据";
             if (lType == LessonDetailType.LessonDetailTypeEdit){
                 String imagePath = moduleModel.commonPath + "images\\" + lessonModel.imageName;
+
+                imageOrignalPath = imagePath;
                 lessonImageButton.BackgroundImage = Image.FromFile(imagePath);
 
                 lessonNameTextBox.Text = lessonModel.name;
@@ -80,8 +82,10 @@ namespace SkkingData
             lessonModel.imageName = imageFileName;
             
             String targetPath = moduleModel.commonPath + "images\\" + imageFileName;
-
-            fileHandle.copyFile(imageOrignalPath, targetPath);
+            if (!targetPath.Equals(imageOrignalPath))
+            {
+                FileHandle.copyFile(imageOrignalPath, targetPath);
+            }
 
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("保存成功");

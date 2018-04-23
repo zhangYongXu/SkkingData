@@ -10,11 +10,14 @@ namespace SkkingData.tools
     public class FileHandle
     {
         public static void saveJsonFile(String path,String jsonString) {
-               FileStream fs1 = new FileStream(path, FileMode.Create, FileAccess.Write);
-           
-               fs1.Close();
+              FileStream fs1 = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
+            StreamWriter sw = new StreamWriter(fs1);
+            sw.WriteLine(jsonString);
+            sw.Flush();
+            sw.Close();
+            fs1.Close();
         }
-        public void copyFile(String originalPath, String targetPath) {
+        public static void copyFile(String originalPath, String targetPath) {
             String dir = Path.GetDirectoryName(targetPath);
             if (!Directory.Exists(dir)) {
                 Directory.CreateDirectory(dir);
@@ -30,21 +33,30 @@ namespace SkkingData.tools
             if (null == path) {
                 return null;
             }
+
+            String dir = Path.GetDirectoryName(path);
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+
+            StringBuilder sb = new StringBuilder();
+
             try
             {
-                StreamReader sr = new StreamReader(path, Encoding.UTF8);
-                String line;
-                while ((line = sr.ReadLine()) != null)
+                string print = "";
+                using (StreamReader sr = new StreamReader(path, Encoding.UTF8))
                 {
-                    Console.WriteLine(line.ToString());
+                    while ((print = sr.ReadLine()) != null)
+                    {
+                        sb.Append(print + "\r\n");
+                    }
                 }
-                sr.Close();
-                return line;
+                string str = sb.ToString();
+                return str;
             }
             catch {
-
             }
-            
             return null;
         }
     }

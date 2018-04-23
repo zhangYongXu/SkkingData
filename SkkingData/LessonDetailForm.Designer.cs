@@ -108,7 +108,7 @@
             this.Controls.Add(this.lessonNameTextBox);
             this.Controls.Add(this.pictureBox1);
             this.Name = "LessonDetailForm";
-            this.Text = "课程编辑";
+            this.Text = "编辑课程";
             this.Load += new System.EventHandler(this.LessonDetailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

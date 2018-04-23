@@ -41,16 +41,26 @@
             this.button5 = new System.Windows.Forms.Button();
             this.moduleTItle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lessonIntroTextBox = new System.Windows.Forms.TextBox();
+            this.addCuoWuVideoBtn = new System.Windows.Forms.Button();
+            this.cuoWuVideoListView = new System.Windows.Forms.ListView();
+            this.cuowoVideo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cuowuvideoTItle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel4 = new System.Windows.Forms.Panel();
+            this.mainVideoTItletextBox1 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.addZhengQueVideoBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.videoListView = new System.Windows.Forms.ListView();
+            this.zhengQuevideoListView = new System.Windows.Forms.ListView();
+            this.videoItem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.videoTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.videoDetialLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -71,6 +81,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "成人双板教程";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             // 
             // button3
             // 
@@ -80,6 +91,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "儿童单板教程";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             // 
             // button4
             // 
@@ -89,6 +101,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "成人单板教程";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
             // 
             // panel1
             // 
@@ -147,13 +160,13 @@
             // 
             // listviewItemLessonImage
             // 
-            this.listviewItemLessonImage.Text = "课程图片";
+            this.listviewItemLessonImage.Text = "课程";
             // 
             // listviewLessonName
             // 
             this.listviewLessonName.Text = "课程标题";
             this.listviewLessonName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.listviewLessonName.Width = 182;
+            this.listviewLessonName.Width = 219;
             // 
             // button5
             // 
@@ -179,38 +192,96 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.videoDetialLabel);
+            this.panel3.Controls.Add(this.lessonIntroTextBox);
+            this.panel3.Controls.Add(this.addCuoWuVideoBtn);
+            this.panel3.Controls.Add(this.cuoWuVideoListView);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.button8);
             this.panel3.Controls.Add(this.button7);
-            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.addZhengQueVideoBtn);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.videoListView);
+            this.panel3.Controls.Add(this.zhengQuevideoListView);
             this.panel3.Location = new System.Drawing.Point(470, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(414, 561);
             this.panel3.TabIndex = 6;
             // 
-            // textBox1
+            // lessonIntroTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(14, 137);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(397, 57);
-            this.textBox1.TabIndex = 9;
+            this.lessonIntroTextBox.Location = new System.Drawing.Point(14, 138);
+            this.lessonIntroTextBox.Multiline = true;
+            this.lessonIntroTextBox.Name = "lessonIntroTextBox";
+            this.lessonIntroTextBox.ReadOnly = true;
+            this.lessonIntroTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.lessonIntroTextBox.Size = new System.Drawing.Size(397, 56);
+            this.lessonIntroTextBox.TabIndex = 12;
+            // 
+            // addCuoWuVideoBtn
+            // 
+            this.addCuoWuVideoBtn.Location = new System.Drawing.Point(232, 201);
+            this.addCuoWuVideoBtn.Name = "addCuoWuVideoBtn";
+            this.addCuoWuVideoBtn.Size = new System.Drawing.Size(151, 23);
+            this.addCuoWuVideoBtn.TabIndex = 11;
+            this.addCuoWuVideoBtn.Text = "添加错误视频";
+            this.addCuoWuVideoBtn.UseVisualStyleBackColor = true;
+            // 
+            // cuoWuVideoListView
+            // 
+            this.cuoWuVideoListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.cuowoVideo,
+            this.cuowuvideoTItle});
+            this.cuoWuVideoListView.GridLines = true;
+            this.cuoWuVideoListView.Location = new System.Drawing.Point(214, 230);
+            this.cuoWuVideoListView.Name = "cuoWuVideoListView";
+            this.cuoWuVideoListView.Size = new System.Drawing.Size(188, 328);
+            this.cuoWuVideoListView.TabIndex = 10;
+            this.cuoWuVideoListView.UseCompatibleStateImageBehavior = false;
+            this.cuoWuVideoListView.View = System.Windows.Forms.View.Details;
+            // 
+            // cuowoVideo
+            // 
+            this.cuowoVideo.Text = "错误视频";
+            // 
+            // cuowuvideoTItle
+            // 
+            this.cuowuvideoTItle.Text = "视频标题";
+            this.cuowuvideoTItle.Width = 121;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.mainVideoTItletextBox1);
+            this.panel4.Controls.Add(this.button6);
             this.panel4.Location = new System.Drawing.Point(14, 42);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(397, 60);
             this.panel4.TabIndex = 8;
             // 
+            // mainVideoTItletextBox1
+            // 
+            this.mainVideoTItletextBox1.Location = new System.Drawing.Point(0, 32);
+            this.mainVideoTItletextBox1.Multiline = true;
+            this.mainVideoTItletextBox1.Name = "mainVideoTItletextBox1";
+            this.mainVideoTItletextBox1.ReadOnly = true;
+            this.mainVideoTItletextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.mainVideoTItletextBox1.Size = new System.Drawing.Size(397, 26);
+            this.mainVideoTItletextBox1.TabIndex = 13;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(3, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(397, 23);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "主视频标题";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(257, 108);
+            this.button8.Location = new System.Drawing.Point(14, 108);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(154, 23);
+            this.button8.Size = new System.Drawing.Size(397, 23);
             this.button8.TabIndex = 7;
             this.button8.Text = "课程简介";
             this.button8.UseVisualStyleBackColor = true;
@@ -222,17 +293,18 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(151, 23);
             this.button7.TabIndex = 6;
-            this.button7.Text = "添加主视频";
+            this.button7.Text = "编辑主视频";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.addMainVideoBtn_Click);
             // 
-            // button6
+            // addZhengQueVideoBtn
             // 
-            this.button6.Location = new System.Drawing.Point(260, 200);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(151, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "添加动作视频";
-            this.button6.UseVisualStyleBackColor = true;
+            this.addZhengQueVideoBtn.Location = new System.Drawing.Point(32, 200);
+            this.addZhengQueVideoBtn.Name = "addZhengQueVideoBtn";
+            this.addZhengQueVideoBtn.Size = new System.Drawing.Size(151, 23);
+            this.addZhengQueVideoBtn.TabIndex = 5;
+            this.addZhengQueVideoBtn.Text = "添加动作视频";
+            this.addZhengQueVideoBtn.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -242,13 +314,38 @@
             this.label2.Size = new System.Drawing.Size(0, 12);
             this.label2.TabIndex = 4;
             // 
-            // videoListView
+            // zhengQuevideoListView
             // 
-            this.videoListView.Location = new System.Drawing.Point(14, 229);
-            this.videoListView.Name = "videoListView";
-            this.videoListView.Size = new System.Drawing.Size(397, 328);
-            this.videoListView.TabIndex = 3;
-            this.videoListView.UseCompatibleStateImageBehavior = false;
+            this.zhengQuevideoListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.videoItem,
+            this.videoTitle});
+            this.zhengQuevideoListView.GridLines = true;
+            this.zhengQuevideoListView.Location = new System.Drawing.Point(14, 229);
+            this.zhengQuevideoListView.Name = "zhengQuevideoListView";
+            this.zhengQuevideoListView.Size = new System.Drawing.Size(188, 328);
+            this.zhengQuevideoListView.TabIndex = 3;
+            this.zhengQuevideoListView.UseCompatibleStateImageBehavior = false;
+            this.zhengQuevideoListView.View = System.Windows.Forms.View.Details;
+            // 
+            // videoItem
+            // 
+            this.videoItem.Text = "正确视频";
+            // 
+            // videoTitle
+            // 
+            this.videoTitle.Text = "视频标题";
+            this.videoTitle.Width = 126;
+            // 
+            // videoDetialLabel
+            // 
+            this.videoDetialLabel.AutoSize = true;
+            this.videoDetialLabel.Font = new System.Drawing.Font("宋体", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.videoDetialLabel.ForeColor = System.Drawing.Color.Red;
+            this.videoDetialLabel.Location = new System.Drawing.Point(18, 9);
+            this.videoDetialLabel.Name = "videoDetialLabel";
+            this.videoDetialLabel.Size = new System.Drawing.Size(25, 16);
+            this.videoDetialLabel.TabIndex = 13;
+            this.videoDetialLabel.Text = "课";
             // 
             // MainForm
             // 
@@ -267,6 +364,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,17 +382,26 @@
         private System.Windows.Forms.Label moduleTItle;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button addZhengQueVideoBtn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView videoListView;
+        private System.Windows.Forms.ListView zhengQuevideoListView;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ListView lessonListView;
         private System.Windows.Forms.ColumnHeader listviewItemLessonImage;
         private System.Windows.Forms.ColumnHeader listviewLessonName;
+        private System.Windows.Forms.Button addCuoWuVideoBtn;
+        private System.Windows.Forms.ListView cuoWuVideoListView;
+        private System.Windows.Forms.ColumnHeader videoItem;
+        private System.Windows.Forms.ColumnHeader videoTitle;
+        private System.Windows.Forms.ColumnHeader cuowoVideo;
+        private System.Windows.Forms.ColumnHeader cuowuvideoTItle;
+        private System.Windows.Forms.TextBox lessonIntroTextBox;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox mainVideoTItletextBox1;
+        private System.Windows.Forms.Label videoDetialLabel;
     }
 }
 
